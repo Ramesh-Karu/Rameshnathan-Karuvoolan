@@ -15,6 +15,9 @@ import { PublicationsPage } from './pages/PublicationsPage';
 import { ContactPage } from './pages/ContactPage';
 import { BooksPage } from './pages/BooksPage';
 import { SpaceTechPage } from './pages/SpaceTechPage';
+import Login from './pages/Login';
+import Admin from './pages/Admin';
+import { ProtectedRoute } from './components/ProtectedRoute';
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -78,6 +81,8 @@ export default function App() {
             <Route path="/books" element={<BooksPage />} />
             <Route path="/space-tech" element={<SpaceTechPage />} />
             <Route path="/contact" element={<ContactPage />} />
+            <Route path="/login-secret" element={<Login />} />
+            <Route path="/admin" element={<ProtectedRoute><Admin /></ProtectedRoute>} />
           </Routes>
         </AnimatePresence>
         

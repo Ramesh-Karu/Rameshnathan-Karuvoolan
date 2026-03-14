@@ -1,10 +1,5 @@
 import React, { useRef } from 'react';
 import { useFrame } from '@react-three/fiber';
-import { Sphere } from '@react-three/drei';
-import * as THREE from 'three';
-
-import React, { useRef } from 'react';
-import { useFrame } from '@react-three/fiber';
 import { Sphere, Float, Ring } from '@react-three/drei';
 import * as THREE from 'three';
 

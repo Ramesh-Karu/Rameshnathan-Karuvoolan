@@ -1,0 +1,20 @@
+{
+  "entities": {
+    "PageContent": {
+      "title": "PageContent",
+      "description": "Stores editable content for pages.",
+      "type": "object",
+      "properties": {
+        "pageId": { "type": "string", "description": "Unique identifier for the page." },
+        "content": { "type": "string", "description": "The HTML or JSON content of the page." }
+      },
+      "required": ["pageId", "content"]
+    }
+  },
+  "firestore": {
+    "/pageContents/{pageId}": {
+      "schema": { "$ref": "PageContent" },
+      "description": "Stores content for each page."
+    }
+  }
+}

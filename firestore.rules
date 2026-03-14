@@ -1,0 +1,22 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    
+    // Helper functions
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+
+    // Assumed Data Model
+    // Collection: pageContents
+    // Document ID: pageId (e.g., 'home', 'about')
+    // Fields:
+    //   - pageId: string (required)
+    //   - content: string (required, max 100000 chars)
+
+    match /pageContents/{pageId} {
+      allow read: if true; // Publicly readable
+      allow write: if isAuthenticated(); // Only authenticated users can edit
+    }
+  }
+}
